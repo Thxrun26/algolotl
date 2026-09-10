@@ -1,0 +1,231 @@
+"""
+The 150-problem catalog (NeetCode 150 set) — the exact list to solve 120–150
+problems in 30 days. Rows: (slug, title, difficulty, pattern).
+Days are auto-assigned (~5/day) and DS categories derived from pattern.
+Every slug maps to a real LeetCode problem URL.
+"""
+
+PATTERN_TO_DS = {
+    "arrays-hashing": "Array & Hashing",
+    "two-pointers": "Array · Two Pointers",
+    "sliding-window": "Array / String · Window",
+    "stack": "Stack",
+    "binary-search": "Sorted Array · Search",
+    "linked-list": "Linked List",
+    "trees": "Tree",
+    "tries": "Trie",
+    "heap": "Heap / Priority Queue",
+    "backtracking": "Recursion & Backtracking",
+    "graphs": "Graph",
+    "adv-graphs": "Advanced Graph",
+    "dp-1d": "DP · 1-D",
+    "dp-2d": "DP · 2-D",
+    "greedy": "Greedy",
+    "intervals": "Intervals",
+    "math": "Math & Matrix",
+    "bit": "Bit Manipulation",
+}
+
+PATTERN_NAME = {
+    "arrays-hashing": "Arrays & Hashing",
+    "two-pointers": "Two Pointers",
+    "sliding-window": "Sliding Window",
+    "stack": "Stack",
+    "binary-search": "Binary Search",
+    "linked-list": "Linked List",
+    "trees": "Trees",
+    "tries": "Tries",
+    "heap": "Heap / Priority Queue",
+    "backtracking": "Backtracking",
+    "graphs": "Graphs",
+    "adv-graphs": "Advanced Graphs",
+    "dp-1d": "1-D Dynamic Programming",
+    "dp-2d": "2-D Dynamic Programming",
+    "greedy": "Greedy",
+    "intervals": "Intervals",
+    "math": "Math & Geometry",
+    "bit": "Bit Manipulation",
+}
+
+CATALOG = [
+    # Arrays & Hashing
+    ("contains-duplicate","Contains Duplicate","Easy","arrays-hashing"),
+    ("valid-anagram","Valid Anagram","Easy","arrays-hashing"),
+    ("two-sum","Two Sum","Easy","arrays-hashing"),
+    ("group-anagrams","Group Anagrams","Medium","arrays-hashing"),
+    ("top-k-frequent-elements","Top K Frequent Elements","Medium","arrays-hashing"),
+    ("encode-and-decode-strings","Encode and Decode Strings","Medium","arrays-hashing"),
+    ("product-of-array-except-self","Product of Array Except Self","Medium","arrays-hashing"),
+    ("valid-sudoku","Valid Sudoku","Medium","arrays-hashing"),
+    ("longest-consecutive-sequence","Longest Consecutive Sequence","Medium","arrays-hashing"),
+    # Two Pointers
+    ("valid-palindrome","Valid Palindrome","Easy","two-pointers"),
+    ("two-sum-ii-input-array-is-sorted","Two Sum II","Medium","two-pointers"),
+    ("3sum","3Sum","Medium","two-pointers"),
+    ("container-with-most-water","Container With Most Water","Medium","two-pointers"),
+    ("trapping-rain-water","Trapping Rain Water","Hard","two-pointers"),
+    # Sliding Window
+    ("best-time-to-buy-and-sell-stock","Best Time to Buy and Sell Stock","Easy","sliding-window"),
+    ("longest-substring-without-repeating-characters","Longest Substring Without Repeating","Medium","sliding-window"),
+    ("longest-repeating-character-replacement","Longest Repeating Character Replacement","Medium","sliding-window"),
+    ("permutation-in-string","Permutation in String","Medium","sliding-window"),
+    ("minimum-window-substring","Minimum Window Substring","Hard","sliding-window"),
+    ("sliding-window-maximum","Sliding Window Maximum","Hard","sliding-window"),
+    # Stack
+    ("valid-parentheses","Valid Parentheses","Easy","stack"),
+    ("min-stack","Min Stack","Medium","stack"),
+    ("evaluate-reverse-polish-notation","Evaluate Reverse Polish Notation","Medium","stack"),
+    ("generate-parentheses","Generate Parentheses","Medium","stack"),
+    ("daily-temperatures","Daily Temperatures","Medium","stack"),
+    ("car-fleet","Car Fleet","Medium","stack"),
+    ("largest-rectangle-in-histogram","Largest Rectangle in Histogram","Hard","stack"),
+    # Binary Search
+    ("binary-search","Binary Search","Easy","binary-search"),
+    ("search-a-2d-matrix","Search a 2D Matrix","Medium","binary-search"),
+    ("koko-eating-bananas","Koko Eating Bananas","Medium","binary-search"),
+    ("find-minimum-in-rotated-sorted-array","Find Minimum in Rotated Sorted Array","Medium","binary-search"),
+    ("search-in-rotated-sorted-array","Search in Rotated Sorted Array","Medium","binary-search"),
+    ("time-based-key-value-store","Time Based Key-Value Store","Medium","binary-search"),
+    ("median-of-two-sorted-arrays","Median of Two Sorted Arrays","Hard","binary-search"),
+    # Linked List
+    ("reverse-linked-list","Reverse Linked List","Easy","linked-list"),
+    ("merge-two-sorted-lists","Merge Two Sorted Lists","Easy","linked-list"),
+    ("reorder-list","Reorder List","Medium","linked-list"),
+    ("remove-nth-node-from-end-of-list","Remove Nth Node From End of List","Medium","linked-list"),
+    ("copy-list-with-random-pointer","Copy List With Random Pointer","Medium","linked-list"),
+    ("add-two-numbers","Add Two Numbers","Medium","linked-list"),
+    ("linked-list-cycle","Linked List Cycle","Easy","linked-list"),
+    ("find-the-duplicate-number","Find the Duplicate Number","Medium","linked-list"),
+    ("lru-cache","LRU Cache","Medium","linked-list"),
+    ("merge-k-sorted-lists","Merge K Sorted Lists","Hard","linked-list"),
+    ("reverse-nodes-in-k-group","Reverse Nodes in K-Group","Hard","linked-list"),
+    # Trees
+    ("invert-binary-tree","Invert Binary Tree","Easy","trees"),
+    ("maximum-depth-of-binary-tree","Maximum Depth of Binary Tree","Easy","trees"),
+    ("diameter-of-binary-tree","Diameter of Binary Tree","Easy","trees"),
+    ("balanced-binary-tree","Balanced Binary Tree","Easy","trees"),
+    ("same-tree","Same Tree","Easy","trees"),
+    ("subtree-of-another-tree","Subtree of Another Tree","Easy","trees"),
+    ("lowest-common-ancestor-of-a-binary-search-tree","Lowest Common Ancestor of a BST","Medium","trees"),
+    ("binary-tree-level-order-traversal","Binary Tree Level Order Traversal","Medium","trees"),
+    ("binary-tree-right-side-view","Binary Tree Right Side View","Medium","trees"),
+    ("count-good-nodes-in-binary-tree","Count Good Nodes in Binary Tree","Medium","trees"),
+    ("validate-binary-search-tree","Validate Binary Search Tree","Medium","trees"),
+    ("kth-smallest-element-in-a-bst","Kth Smallest Element in a BST","Medium","trees"),
+    ("construct-binary-tree-from-preorder-and-inorder-traversal","Construct Tree from Preorder & Inorder","Medium","trees"),
+    ("binary-tree-maximum-path-sum","Binary Tree Maximum Path Sum","Hard","trees"),
+    ("serialize-and-deserialize-binary-tree","Serialize and Deserialize Binary Tree","Hard","trees"),
+    # Tries
+    ("implement-trie-prefix-tree","Implement Trie (Prefix Tree)","Medium","tries"),
+    ("design-add-and-search-words-data-structure","Design Add and Search Words","Medium","tries"),
+    ("word-search-ii","Word Search II","Hard","tries"),
+    # Heap
+    ("kth-largest-element-in-a-stream","Kth Largest Element in a Stream","Easy","heap"),
+    ("last-stone-weight","Last Stone Weight","Easy","heap"),
+    ("k-closest-points-to-origin","K Closest Points to Origin","Medium","heap"),
+    ("kth-largest-element-in-an-array","Kth Largest Element in an Array","Medium","heap"),
+    ("task-scheduler","Task Scheduler","Medium","heap"),
+    ("design-twitter","Design Twitter","Medium","heap"),
+    ("find-median-from-data-stream","Find Median from Data Stream","Hard","heap"),
+    # Backtracking
+    ("subsets","Subsets","Medium","backtracking"),
+    ("combination-sum","Combination Sum","Medium","backtracking"),
+    ("permutations","Permutations","Medium","backtracking"),
+    ("subsets-ii","Subsets II","Medium","backtracking"),
+    ("combination-sum-ii","Combination Sum II","Medium","backtracking"),
+    ("word-search","Word Search","Medium","backtracking"),
+    ("palindrome-partitioning","Palindrome Partitioning","Medium","backtracking"),
+    ("letter-combinations-of-a-phone-number","Letter Combinations of a Phone Number","Medium","backtracking"),
+    ("n-queens","N-Queens","Hard","backtracking"),
+    # Graphs
+    ("number-of-islands","Number of Islands","Medium","graphs"),
+    ("max-area-of-island","Max Area of Island","Medium","graphs"),
+    ("clone-graph","Clone Graph","Medium","graphs"),
+    ("walls-and-gates","Walls and Gates","Medium","graphs"),
+    ("rotting-oranges","Rotting Oranges","Medium","graphs"),
+    ("pacific-atlantic-water-flow","Pacific Atlantic Water Flow","Medium","graphs"),
+    ("surrounded-regions","Surrounded Regions","Medium","graphs"),
+    ("course-schedule","Course Schedule","Medium","graphs"),
+    ("course-schedule-ii","Course Schedule II","Medium","graphs"),
+    ("graph-valid-tree","Graph Valid Tree","Medium","graphs"),
+    ("number-of-connected-components-in-an-undirected-graph","Number of Connected Components","Medium","graphs"),
+    ("redundant-connection","Redundant Connection","Medium","graphs"),
+    ("word-ladder","Word Ladder","Hard","graphs"),
+    # Advanced Graphs
+    ("reconstruct-itinerary","Reconstruct Itinerary","Hard","adv-graphs"),
+    ("min-cost-to-connect-all-points","Min Cost to Connect All Points","Medium","adv-graphs"),
+    ("network-delay-time","Network Delay Time","Medium","adv-graphs"),
+    ("swim-in-rising-water","Swim in Rising Water","Hard","adv-graphs"),
+    ("alien-dictionary","Alien Dictionary","Hard","adv-graphs"),
+    ("cheapest-flights-within-k-stops","Cheapest Flights Within K Stops","Medium","adv-graphs"),
+    # 1-D DP
+    ("climbing-stairs","Climbing Stairs","Easy","dp-1d"),
+    ("min-cost-climbing-stairs","Min Cost Climbing Stairs","Easy","dp-1d"),
+    ("house-robber","House Robber","Medium","dp-1d"),
+    ("house-robber-ii","House Robber II","Medium","dp-1d"),
+    ("longest-palindromic-substring","Longest Palindromic Substring","Medium","dp-1d"),
+    ("palindromic-substrings","Palindromic Substrings","Medium","dp-1d"),
+    ("decode-ways","Decode Ways","Medium","dp-1d"),
+    ("coin-change","Coin Change","Medium","dp-1d"),
+    ("maximum-product-subarray","Maximum Product Subarray","Medium","dp-1d"),
+    ("word-break","Word Break","Medium","dp-1d"),
+    ("longest-increasing-subsequence","Longest Increasing Subsequence","Medium","dp-1d"),
+    ("partition-equal-subset-sum","Partition Equal Subset Sum","Medium","dp-1d"),
+    # 2-D DP
+    ("unique-paths","Unique Paths","Medium","dp-2d"),
+    ("longest-common-subsequence","Longest Common Subsequence","Medium","dp-2d"),
+    ("best-time-to-buy-and-sell-stock-with-cooldown","Buy/Sell Stock With Cooldown","Medium","dp-2d"),
+    ("coin-change-ii","Coin Change II","Medium","dp-2d"),
+    ("target-sum","Target Sum","Medium","dp-2d"),
+    ("interleaving-string","Interleaving String","Medium","dp-2d"),
+    ("longest-increasing-path-in-a-matrix","Longest Increasing Path in a Matrix","Hard","dp-2d"),
+    ("distinct-subsequences","Distinct Subsequences","Hard","dp-2d"),
+    ("edit-distance","Edit Distance","Medium","dp-2d"),
+    ("burst-balloons","Burst Balloons","Hard","dp-2d"),
+    ("regular-expression-matching","Regular Expression Matching","Hard","dp-2d"),
+    # Greedy
+    ("maximum-subarray","Maximum Subarray","Medium","greedy"),
+    ("jump-game","Jump Game","Medium","greedy"),
+    ("jump-game-ii","Jump Game II","Medium","greedy"),
+    ("gas-station","Gas Station","Medium","greedy"),
+    ("hand-of-straights","Hand of Straights","Medium","greedy"),
+    ("merge-triplets-to-form-target-triplet","Merge Triplets to Form Target","Medium","greedy"),
+    ("partition-labels","Partition Labels","Medium","greedy"),
+    ("valid-parenthesis-string","Valid Parenthesis String","Medium","greedy"),
+    # Intervals
+    ("insert-interval","Insert Interval","Medium","intervals"),
+    ("merge-intervals","Merge Intervals","Medium","intervals"),
+    ("non-overlapping-intervals","Non-overlapping Intervals","Medium","intervals"),
+    ("meeting-rooms","Meeting Rooms","Easy","intervals"),
+    ("meeting-rooms-ii","Meeting Rooms II","Medium","intervals"),
+    ("minimum-interval-to-include-each-query","Minimum Interval to Include Each Query","Hard","intervals"),
+    # Math & Geometry
+    ("rotate-image","Rotate Image","Medium","math"),
+    ("spiral-matrix","Spiral Matrix","Medium","math"),
+    ("set-matrix-zeroes","Set Matrix Zeroes","Medium","math"),
+    ("happy-number","Happy Number","Easy","math"),
+    ("plus-one","Plus One","Easy","math"),
+    ("powx-n","Pow(x, n)","Medium","math"),
+    ("multiply-strings","Multiply Strings","Medium","math"),
+    ("detect-squares","Detect Squares","Medium","math"),
+    # Bit Manipulation
+    ("single-number","Single Number","Easy","bit"),
+    ("number-of-1-bits","Number of 1 Bits","Easy","bit"),
+    ("counting-bits","Counting Bits","Easy","bit"),
+    ("reverse-bits","Reverse Bits","Easy","bit"),
+    ("missing-number","Missing Number","Easy","bit"),
+    ("sum-of-two-integers","Sum of Two Integers","Medium","bit"),
+    ("reverse-integer","Reverse Integer","Medium","bit"),
+]
+
+
+def assign_days(catalog, total_days=30):
+    """Distribute problems across teaching days (skip pure review days 7,14,21,28,29,30)."""
+    review_days = {7, 14, 21, 28, 29, 30}
+    teach_days = [d for d in range(1, total_days + 1) if d not in review_days]
+    per = -(-len(catalog) // len(teach_days))  # ceil
+    out = []
+    for i, row in enumerate(catalog):
+        day = teach_days[min(i // per, len(teach_days) - 1)]
+        out.append(row + (day,))
+    return out
